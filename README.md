@@ -1,3 +1,6 @@
+# curso-react-redux
+Podrás crear aplicaciones React con Redux utilizando todas las features de ES6 y la última versión de React. Vamos a ver utilización de selectores, herramientas de debugging, la última versión de React Router, validaciones con PropTypes, plugins para el editor VSCode y mucho más. Orientado desde la base de todos los temas, para que cada uno pueda avanzar a su propio ritmo, mostrando siempre primero la práctica y luego la explicación teórica, para que no falte nada y sea mucho más interesante.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +69,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
