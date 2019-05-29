@@ -1,0 +1,21 @@
+.weatherdataCont {
+    background-color: red;
+    width: 500;
+    height: 200px;
+}
+
+.weatherExtraInfoCont {
+    background-color: green;
+    width: 40%;
+    height: 200px;
+    display: inline-block;
+    color: black;
+}
+
+.weatherTemperatureCont {
+    background-color: yellow;
+    width: 60%;
+    height: 200px;
+    display: inline-block;
+    color: black;
+}
