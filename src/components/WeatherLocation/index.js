@@ -1,20 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
+import transformWeather from './../../services/transformWeather';
+import { api_weather } from './../../constants/api_url';
 import Location from './Location';
 import WeatherData from './WeatherData';
-import PropTypes from 'prop-types';
 
-import {
-    SUN,
-    RAIN
-} from './../../constants/weathers';
-
-const data = {
-    temperature: 12,
-    weatherState: RAIN,
-    humidity: 10,
-    wind: '10 m/s',
-};
 
 class WeatherLocation extends Component {
 
@@ -22,21 +12,48 @@ class WeatherLocation extends Component {
         super();
         this.state = {
             city: 'Barcelona',
-            data: data
+            data: null
         };
+        console.log('constructor');
+    }
+    
+    componentDidMount() {
+        console.log('componentDidMount');
+        this.handleUpdateClick();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate');
+
+    }
+    
+    componentWillMount() {
+        console.log('UNSAFE componentWillMount');
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('UNSAFE componentWillUpdate');
+        
     }
 
     handleUpdateClick = () => {
-        console.log('actualizado');
-        this.setState({city: 'Santiago de Chile'});
+        fetch(api_weather).then(resolve => {
+            return resolve.json();
+        }).then(data => {
+            console.log('handleUpdateClick');
+            const newWeather = transformWeather(data);
+            this.setState({
+                data: newWeather
+            });
+        });
     }
     render(){
+        console.log('render');
         const { city, data } = this.state;
         return(
             <div>
                 <Location city={city}></Location>
-                <WeatherData data={data}></WeatherData>
-                <button onClick={this.handleUpdateClick}>Actualizar</button>
+                {data ? <WeatherData data={data}></WeatherData> : 'Cargando...'}
             </div>
         );
     }
