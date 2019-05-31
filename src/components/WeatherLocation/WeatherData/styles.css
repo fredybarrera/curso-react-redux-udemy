@@ -17,6 +17,12 @@
     color: black;
 }
 
+.locationCont{
+    overflow: auto;
+}
+
 .weatherLocationCont{
+    width: 400px;
+    padding: 25px;
     background-color: #c6d4d4;
 }
